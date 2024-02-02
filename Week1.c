@@ -27,7 +27,7 @@ float getWeight(){
 void getData(struct name n[], float w[], char choice){
     if(choice == 's'){
         printf("Enter names and weights of the students: -\n");
-        for(int i = 0; i < 5; i++){
+        for(int i = 0; i < 30; i++){
             printf("Name:\t");
             scanf("%20s", n[i].letters);
             getchar();
@@ -38,7 +38,7 @@ void getData(struct name n[], float w[], char choice){
     }
     else if(choice == 'e'){
         printf("Enter weights of the students: -\n");
-        for(int i = 0; i < 5; i++){
+        for(int i = 0; i < 30; i++){
             printf("End-of-term weight of %s:\t", n[i].letters);
             w[i] = getWeight();
         }
@@ -49,7 +49,7 @@ void getData(struct name n[], float w[], char choice){
 
 //Function to calculate the difference in weights 
 void getDiff(float w1[], float w2[], float d[]){
-    for(int i = 0; i < 5; i++)
+    for(int i = 0; i < 30; i++)
         d[i] = w2[i] - w1[i];
 
     printf("\nDone!\n");
@@ -60,7 +60,7 @@ void getDiff(float w1[], float w2[], float d[]){
 
 //Function to check the differences and display those with difference greater than 2.5
 void checkDiff(struct name n[], float d[]){
-    for(int i = 0; i < 5; i++){
+    for(int i = 0; i < 30; i++){
         if(d[i] > 2.5){
             printf("%s's weight has increased by %f\n", n[i].letters, d[i]);
         }
@@ -73,8 +73,8 @@ void checkDiff(struct name n[], float d[]){
 //Main function
 //Implementation
 int main(){
-    struct name studentNames[5];
-    float SOTWeights[5], EOTWeights[5], differences[5];
+    struct name studentNames[30];
+    float SOTWeights[30], EOTWeights[30], differences[30];
     int option = 0;
 
     while(1){
