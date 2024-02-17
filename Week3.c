@@ -47,6 +47,7 @@ int main() {
     return 0;
 }
 
+//Function to record the weekly yield for the cows
 void recordYield(Cow cows[], int num_cows) {
     for (int i = 0; i < num_cows; i++) {
         printf("Recording yields for cow %d (identity code %d):\n", i + 1, cows[i].identity_code);
@@ -60,6 +61,7 @@ void recordYield(Cow cows[], int num_cows) {
     }
 }
 
+//Function to calculate the average and total yields
 void calculateStatistics(Cow cows[], int num_cows) {
     double total_volume = 0.0;
     int total_yields = 0;
@@ -76,6 +78,7 @@ void calculateStatistics(Cow cows[], int num_cows) {
     printf("Average yield per cow in a week: %.0f litres\n", average_yield);
 }
 
+//Function identify the productivity of cows in the herd
 void identifyMostProductiveAndLowVolumeCows(Cow cows[], int num_cows) {
     int most_productive_index = 0;
     double max_yield = 0.0;
