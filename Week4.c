@@ -17,7 +17,7 @@ int numItems = 0;
 
 void addItem() {
     if(numItems >= MAX_ITEMS) {
-        printf("Auction is full, cannot add more items.\n");
+        printf("\nAuction is full, cannot add more items.\n");
         return;
     }
 
@@ -52,15 +52,15 @@ void placeBid() {
                 items[i].highestBid = bid;
                 items[i].buyerNum = buyerNum;
                 items[i].numBids++;
-                printf("Bid placed successfully!\n");
+                printf("\nBid placed successfully!\n\n");
             } else {
-                printf("Your bid must be higher than the current highest bid.\n");
+                printf("\nYour bid must be higher than the current highest bid.\n\n");
             }
             return;
         }
     }
 
-    printf("Item not found.\n");
+    printf("Item not found.\n\n");
 }
 
 void endAuction() {
@@ -81,17 +81,14 @@ void endAuction() {
     printf("Number of items sold: %d\n", soldItems);
     printf("Number of items that did not meet reserve price: %d\n", notMetReserve);
     printf("Number of items with no bids: %d\n", noBids);
-    printf("Total fee for all sold items: %.2f\n", totalFee);
+    printf("Total fee for all sold items: %.2f\n\n", totalFee);
 }
 
 int main() {
     char choice;
 
     while(1) {
-        printf("1. Add item\n");
-        printf("2. Place bid\n");
-        printf("3. End auction\n");
-        printf("4. Exit\n");
+        printf("1. Add item\n2. Place bid\n3. End auction\n4. Exit\n");
         printf("Enter choice: ");
         scanf(" %c", &choice);
 
@@ -106,10 +103,10 @@ int main() {
                 endAuction();
                 break;
             case '4':
-                printf("Exited Successfully.\n");
+                printf("\nExited Successfully.\n");
                 exit(0);
             default:
-                printf("Invalid choice. Please enter again.\n");
+                printf("\nInvalid choice. Please enter again.\n");
         }
     }
 
